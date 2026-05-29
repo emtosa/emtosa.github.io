@@ -46,9 +46,9 @@ url: "https://YOUR_USERNAME.github.io"
 baseurl: ""
 ```
 
-> **⚠️ Important:** Leaving `url` or `baseurl` empty breaks RSS feed links and SEO
-> canonical URLs. Jekyll's `jekyll-feed` and `jekyll-seo-tag` plugins use these
-> values to generate absolute URLs — empty strings produce malformed `<link>` tags.
+> **⚠️ Important:** `url` must be set correctly for RSS and canonical URLs.
+> For `<username>.github.io` root-domain sites, `baseurl: ""` is expected.
+> For project sites, set `baseurl` to the repo path (for example, `/my-project`).
 
 ---
 
@@ -131,7 +131,7 @@ YOUR_USERNAME.github.io/
 ├── index.md             # Home page (lists posts)
 ├── README.md            # This file
 ├── _posts/
-│   └── 2026-05-29-ai-productivity-cli-developers.md
+│   └── 2026-05-29-microsoft-model-positioning.md
 └── scripts/
     └── new-post.sh      # Low-friction post authoring helper
 ```
