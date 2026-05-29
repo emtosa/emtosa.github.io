@@ -1,6 +1,6 @@
-# aicliproductivity
+# emtosa.github.io
 
-A Jekyll-based GitHub Pages blog for CLI-first developer content.
+A Jekyll-based GitHub Pages **personal blog** for broad community writing.
 
 ---
 
@@ -8,7 +8,7 @@ A Jekyll-based GitHub Pages blog for CLI-first developer content.
 
 ```sh
 gem install bundler jekyll
-cd aicliproductivity
+cd emtosa.github.io
 bundle init
 bundle add jekyll minima jekyll-feed jekyll-seo-tag
 bundle exec jekyll serve
@@ -23,17 +23,17 @@ bundle exec jekyll serve
 
 **Option A: via `gh` CLI (fastest)**
 ```sh
-gh repo create aicliproductivity --public --description "CLI-first developer blog"
+gh repo create YOUR_USERNAME.github.io --public --description "Personal blog"
 ```
 
 **Option B: via GitHub web UI**
 1. Go to https://github.com/new
-2. Name: `aicliproductivity`
+2. Name: `<yourusername>.github.io`
 3. Visibility: Public
 4. Do NOT initialize with README (you already have one)
 5. Click "Create repository"
 
-> **Note:** If you want the blog at `https://yourusername.github.io` (root domain), name the repo `<yourusername>.github.io` instead.
+> **Note:** For root-domain publishing (`https://yourusername.github.io`), the repo **must** be named `<yourusername>.github.io`.
 
 ---
 
@@ -43,7 +43,7 @@ Update these two lines in `_config.yml` before your first push:
 
 ```yaml
 url: "https://YOUR_USERNAME.github.io"
-baseurl: "/aicliproductivity"
+baseurl: ""
 ```
 
 > **⚠️ Important:** Leaving `url` or `baseurl` empty breaks RSS feed links and SEO
@@ -55,10 +55,10 @@ baseurl: "/aicliproductivity"
 ### Step 3 — Connect and push
 
 ```sh
-cd aicliproductivity
+cd emtosa.github.io
 
 # Add remote (replace YOUR_USERNAME)
-git remote add origin https://github.com/YOUR_USERNAME/aicliproductivity.git
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_USERNAME.github.io.git
 
 # First commit (includes the url/baseurl you just set)
 git add .
@@ -82,7 +82,7 @@ GitHub will build and publish in ~1 minute.
 
 Your site will be live at:
 ```
-https://YOUR_USERNAME.github.io/aicliproductivity/
+https://YOUR_USERNAME.github.io/
 ```
 
 ---
@@ -126,7 +126,7 @@ Before publishing any post, confirm:
 ## Repo structure
 
 ```
-aicliproductivity/
+YOUR_USERNAME.github.io/
 ├── _config.yml          # Jekyll site config
 ├── index.md             # Home page (lists posts)
 ├── README.md            # This file
