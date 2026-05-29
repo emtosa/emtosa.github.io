@@ -1,7 +1,7 @@
 title: "CLI-First Developer Blog"
 description: "Practical AI productivity for developers who live in the terminal."
-url: "" # Set to your GitHub Pages URL, e.g. https://yourusername.github.io
-baseurl: "" # Leave empty if repo is <username>.github.io, else set to /repo-name
+url: "https://tosao.github.io"
+baseurl: "/ai-cli-productivity-blog"
 
 author:
   name: "tosao"

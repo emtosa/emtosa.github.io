@@ -55,7 +55,7 @@ baseurl: "/ai-cli-productivity-blog"
 ### Step 3 — Connect and push
 
 ```sh
-cd /Users/tosao/ai-cli-productivity-blog
+cd ai-cli-productivity-blog
 
 # Add remote (replace YOUR_USERNAME)
 git remote add origin https://github.com/YOUR_USERNAME/ai-cli-productivity-blog.git
@@ -116,7 +116,7 @@ ai-cli-productivity-blog/
 ├── index.md             # Home page (lists posts)
 ├── README.md            # This file
 ├── _posts/
-│   └── 2025-07-15-ai-productivity-cli-developers.md
+│   └── 2026-05-29-ai-productivity-cli-developers.md
 └── scripts/
     └── new-post.sh      # Low-friction post authoring helper
 ```
