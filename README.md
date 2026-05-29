@@ -37,7 +37,22 @@ gh repo create ai-cli-productivity-blog --public --description "CLI-first develo
 
 ---
 
-### Step 2 — Connect and push
+### Step 2 — Set `url` and `baseurl` in `_config.yml` (do this before pushing)
+
+Update these two lines in `_config.yml` before your first push:
+
+```yaml
+url: "https://YOUR_USERNAME.github.io"
+baseurl: "/ai-cli-productivity-blog"
+```
+
+> **⚠️ Important:** Leaving `url` or `baseurl` empty breaks RSS feed links and SEO
+> canonical URLs. Jekyll's `jekyll-feed` and `jekyll-seo-tag` plugins use these
+> values to generate absolute URLs — empty strings produce malformed `<link>` tags.
+
+---
+
+### Step 3 — Connect and push
 
 ```sh
 cd /Users/tosao/ai-cli-productivity-blog
@@ -45,7 +60,7 @@ cd /Users/tosao/ai-cli-productivity-blog
 # Add remote (replace YOUR_USERNAME)
 git remote add origin https://github.com/YOUR_USERNAME/ai-cli-productivity-blog.git
 
-# First commit
+# First commit (includes the url/baseurl you just set)
 git add .
 git commit -m "Initial blog setup with first post"
 
@@ -55,7 +70,7 @@ git push -u origin main
 
 ---
 
-### Step 3 — Enable GitHub Pages
+### Step 4 — Enable GitHub Pages
 
 1. Go to your repo on GitHub
 2. **Settings → Pages**
@@ -68,24 +83,6 @@ GitHub will build and publish in ~1 minute.
 Your site will be live at:
 ```
 https://YOUR_USERNAME.github.io/ai-cli-productivity-blog/
-```
-
----
-
-### Step 4 — Update `_config.yml`
-
-Once you have the live URL, update these two lines in `_config.yml`:
-
-```yaml
-url: "https://YOUR_USERNAME.github.io"
-baseurl: "/ai-cli-productivity-blog"
-```
-
-Then commit and push:
-```sh
-git add _config.yml
-git commit -m "Set live site URL in config"
-git push
 ```
 
 ---

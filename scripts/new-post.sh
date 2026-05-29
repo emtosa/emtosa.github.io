@@ -21,16 +21,16 @@ DATE="$(date +%Y-%m-%d)"
 DATETIME="$(date +%Y-%m-%d) 00:00:00 +0000"
 FILENAME="_posts/${DATE}-${SLUG}.md"
 
-# Guard: don't overwrite existing post
-if [[ -f "$FILENAME" ]]; then
-  echo "Error: $FILENAME already exists. Choose a different slug or date."
-  exit 1
-fi
-
 # Resolve to repo root (script may be called from anywhere)
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(dirname "$SCRIPT_DIR")"
 TARGET="${REPO_ROOT}/${FILENAME}"
+
+# Guard: don't overwrite existing post
+if [[ -f "$TARGET" ]]; then
+  echo "Error: $TARGET already exists. Choose a different slug or date."
+  exit 1
+fi
 
 cat > "$TARGET" <<EOF
 ---

@@ -1,9 +1,29 @@
 ---
 layout: post
 title: "AI Productivity for CLI-First Developers"
-date: 2025-07-15 00:00:00 +0000
+date: 2026-05-29 00:00:00 +0000
 description: "Stop switching to browser chat tabs. Treat AI as a composable terminal tool — and keep your flow intact."
+image: /assets/images/ai-cli-productivity-og.svg
 tags: [ai, cli, productivity, developer-tools, github-copilot]
+---
+
+## Prerequisites
+
+To follow the examples in this article you need two things installed and authenticated:
+
+```sh
+# 1. Install the gh CLI — https://cli.github.com
+#    macOS: brew install gh   |   Linux: see https://github.com/cli/cli#installation
+
+# 2. Install the Copilot extension
+gh extension install github/gh-copilot
+
+# 3. Authenticate (if you haven't already)
+gh auth login
+```
+
+Once `gh copilot suggest "hello"` prints a suggestion, you're ready.
+
 ---
 
 You type `gh copilot suggest "list processes using port 8080"` and a runnable one-liner lands in your terminal in under three seconds — already inside the same composable environment where your pipes, aliases, and flow live. No browser tab opened. No context switch.
@@ -101,6 +121,20 @@ gh copilot suggest "given files with open TODOs: $HITS — write a bash script t
 ```
 
 The critical pattern is capture-then-compose. Piping directly into `gh copilot` triggers interactive mode. Capture the context you need with `$()` first, then embed it as a string in the prompt argument. This is the reliable pattern for any codebase-aware suggestion.
+
+> **⚠ Safety — metacharacter injection in `$VAR` interpolation:** When the captured variable comes from log output or user-controlled input (e.g. `ERR=$(tail -20 error.log)`), it may contain shell metacharacters — backticks, `$()`, quotes, newlines — that word-split or execute when unquoted inside a double-quoted string. Two safe patterns:
+>
+> ```sh
+> # Option A — printf %q escapes the value for safe re-use as a single word
+> SAFE_ERR=$(printf '%q' "$(tail -20 error.log)")
+> gh copilot suggest "diagnose this error: $SAFE_ERR"
+>
+> # Option B — truncate and strip control characters before embedding
+> ERR=$(tail -20 error.log | tr -d '\000-\037' | head -c 500)
+> gh copilot suggest "diagnose this error: $ERR"
+> ```
+>
+> For `$HITS`-style captured paths and comma-lists the risk is low, but adopt `printf '%q'` by default whenever the source is a log file or external command output.
 
 ### Habit 5 — Embed project context in a Makefile target
 
