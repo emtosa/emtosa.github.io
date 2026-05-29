@@ -1,0 +1,39 @@
+title: "CLI-First Developer Blog"
+description: "Practical AI productivity for developers who live in the terminal."
+url: "" # Set to your GitHub Pages URL, e.g. https://yourusername.github.io
+baseurl: "" # Leave empty if repo is <username>.github.io, else set to /repo-name
+
+author:
+  name: "tosao"
+
+# Build settings
+theme: minima
+markdown: kramdown
+highlighter: rouge
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "tosao"
+
+# Pagination (optional, add jekyll-paginate to Gemfile to enable)
+# paginate: 5
+# paginate_path: "/page:num/"
+
+permalink: /posts/:year/:month/:day/:title/
+
+exclude:
+  - README.md
+  - scripts/
+  - Gemfile
+  - Gemfile.lock
+  - .git/
