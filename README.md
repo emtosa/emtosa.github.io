@@ -1,4 +1,4 @@
-# ai-cli-productivity-blog
+# aicliproductivity
 
 A Jekyll-based GitHub Pages blog for CLI-first developer content.
 
@@ -8,7 +8,7 @@ A Jekyll-based GitHub Pages blog for CLI-first developer content.
 
 ```sh
 gem install bundler jekyll
-cd ai-cli-productivity-blog
+cd aicliproductivity
 bundle init
 bundle add jekyll minima jekyll-feed jekyll-seo-tag
 bundle exec jekyll serve
@@ -23,12 +23,12 @@ bundle exec jekyll serve
 
 **Option A: via `gh` CLI (fastest)**
 ```sh
-gh repo create ai-cli-productivity-blog --public --description "CLI-first developer blog"
+gh repo create aicliproductivity --public --description "CLI-first developer blog"
 ```
 
 **Option B: via GitHub web UI**
 1. Go to https://github.com/new
-2. Name: `ai-cli-productivity-blog`
+2. Name: `aicliproductivity`
 3. Visibility: Public
 4. Do NOT initialize with README (you already have one)
 5. Click "Create repository"
@@ -43,7 +43,7 @@ Update these two lines in `_config.yml` before your first push:
 
 ```yaml
 url: "https://YOUR_USERNAME.github.io"
-baseurl: "/ai-cli-productivity-blog"
+baseurl: "/aicliproductivity"
 ```
 
 > **⚠️ Important:** Leaving `url` or `baseurl` empty breaks RSS feed links and SEO
@@ -55,10 +55,10 @@ baseurl: "/ai-cli-productivity-blog"
 ### Step 3 — Connect and push
 
 ```sh
-cd ai-cli-productivity-blog
+cd aicliproductivity
 
 # Add remote (replace YOUR_USERNAME)
-git remote add origin https://github.com/YOUR_USERNAME/ai-cli-productivity-blog.git
+git remote add origin https://github.com/YOUR_USERNAME/aicliproductivity.git
 
 # First commit (includes the url/baseurl you just set)
 git add .
@@ -82,7 +82,7 @@ GitHub will build and publish in ~1 minute.
 
 Your site will be live at:
 ```
-https://YOUR_USERNAME.github.io/ai-cli-productivity-blog/
+https://YOUR_USERNAME.github.io/aicliproductivity/
 ```
 
 ---
@@ -126,7 +126,7 @@ Before publishing any post, confirm:
 ## Repo structure
 
 ```
-ai-cli-productivity-blog/
+aicliproductivity/
 ├── _config.yml          # Jekyll site config
 ├── index.md             # Home page (lists posts)
 ├── README.md            # This file
