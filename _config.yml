@@ -1,7 +1,7 @@
-title: "CLI-First Developer Blog"
-description: "Practical AI productivity for developers who live in the terminal."
-url: "https://tosao.github.io"
-baseurl: "/ai-cli-productivity-blog"
+title: "emtosa — Personal Blog"
+description: "Personal writing on technology, AI, developer workflows, and broader community topics."
+url: "https://emtosa.github.io"
+baseurl: ""
 
 author:
   name: "tosao"
