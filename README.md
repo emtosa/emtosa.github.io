@@ -108,6 +108,21 @@ GitHub Pages rebuilds automatically on every push to `main`.
 
 ---
 
+## Editorial Coherence Checklist
+
+Before publishing any post, confirm:
+
+- [ ] Opening includes Hook -> Thesis -> Audience in the first ~120 words
+- [ ] Scope is explicit (for example: "As of <month year>, directional analysis")
+- [ ] Comparison lens is consistent across sections (capability/distribution/governance/economics)
+- [ ] Claims use calibrated language ("likely", "currently", "depends on execution")
+- [ ] Risks and disconfirming conditions are included
+- [ ] Practical "what to do next" guidance is present for operators/builders
+- [ ] Ending includes a concise decision checklist or litmus test
+- [ ] Title, description, and tags match the post's actual scope
+
+---
+
 ## Repo structure
 
 ```
