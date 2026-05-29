@@ -1,6 +1,6 @@
 ---
 layout: home
-title: CLI-First Developer Blog
+title: emtosa — Personal Blog
 ---
 
 ## Latest Posts
@@ -18,5 +18,5 @@ title: CLI-First Developer Blog
 ---
 {% endfor %}
 
-> This blog is about practical AI productivity for developers who live in the terminal.
-> New posts publish directly from the command line — no CMS required.
+> Personal writing on technology, AI, developer workflows, and broader community topics.
+> Practical when possible, opinionated when useful.
