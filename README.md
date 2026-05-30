@@ -55,7 +55,7 @@ baseurl: ""
 ### Step 3 — Connect and push
 
 ```sh
-cd emtosa.github.io
+cd YOUR_USERNAME.github.io
 
 # Add remote (replace YOUR_USERNAME)
 git remote add origin https://github.com/YOUR_USERNAME/YOUR_USERNAME.github.io.git
