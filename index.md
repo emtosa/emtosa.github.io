@@ -1,6 +1,6 @@
 ---
 layout: home
-title: emtosa — Personal Blog
+title: Kernel
 ---
 
 ## Latest Posts
@@ -18,5 +18,5 @@ title: emtosa — Personal Blog
 ---
 {% endfor %}
 
-> Personal writing on technology, AI, developer workflows, and broader community topics.
-> Practical when possible, opinionated when useful.
+> Technical Writing on AI & Developer Tools
+> Practical insights and opinionated perspectives on productivity and development workflows.

@@ -1,6 +1,6 @@
-# emtosa.github.io
+# Kernel Blog
 
-A Jekyll-based GitHub Pages **personal blog** for broad community writing.
+A Jekyll-based GitHub Pages **personal blog** for technical writing on AI and developer tools.
 
 ---
 
@@ -8,7 +8,7 @@ A Jekyll-based GitHub Pages **personal blog** for broad community writing.
 
 ```sh
 gem install bundler jekyll
-cd emtosa.github.io
+cd kernel-blog
 bundle init
 bundle add jekyll minima jekyll-feed jekyll-seo-tag
 bundle exec jekyll serve
@@ -126,7 +126,7 @@ Before publishing any post, confirm:
 ## Repo structure
 
 ```
-YOUR_USERNAME.github.io/
+kernel-blog/
 ├── _config.yml          # Jekyll site config
 ├── index.md             # Home page (lists posts)
 ├── README.md            # This file
