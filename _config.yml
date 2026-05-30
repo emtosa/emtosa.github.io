@@ -3,9 +3,6 @@ description: "Personal blog exploring AI, productivity, and developer workflows"
 url: "https://kernel.page"
 baseurl: ""
 
-author:
-  name: "tosao"
-
 # Build settings
 theme: minima
 markdown: kramdown
@@ -23,7 +20,6 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "tosao"
 
 # Pagination (optional, add jekyll-paginate to Gemfile to enable)
 # paginate: 5
