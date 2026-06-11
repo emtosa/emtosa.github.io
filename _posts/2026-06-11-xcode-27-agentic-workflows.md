@@ -10,7 +10,7 @@ I pay attention to tooling updates for one reason: they change what is realistic
 
 Xcode 27 is one of those updates.
 
-Apple’s latest Xcode page now positions agentic coding as a first-class development workflow, not just an assistive feature. That sounds like marketing until you map it against day-to-day work: planning, editing, debugging, and iteration inside a single IDE flow.
+Apple’s latest Xcode page explicitly highlights “predictive code completion” and “generative intelligence powered by the best coding models and agents.” My read is that this signals a stronger workflow emphasis than older “autocomplete-only” framing — but that interpretation is mine, not an Apple guarantee of end-to-end automation.
 
 ## The practical shift
 
@@ -28,18 +28,18 @@ Xcode 27 pushes this toward a tighter loop:
 3. Validate quickly
 4. Iterate with fewer context jumps
 
-That sounds small, but reducing context switches is a major productivity gain for solo operators.
+In my own workflow, fewer context switches usually improve cycle time. Treat this as personal inference, not a universal outcome.
 
 ## Why this is bigger than autocomplete
 
-Autocomplete helps at line level. Agentic workflows help at task level.
+Autocomplete helps at line level. Agentic workflows can help at task level when prompts and constraints are clear.
 
 The difference is scope:
 
 - **Autocomplete:** “finish this statement”
 - **Agentic assist:** “implement this flow, then debug why it fails”
 
-If the tooling can hold enough context to reason across files and follow symbol usage correctly, it becomes useful for real issue-sized work, not just snippets.
+If the tooling can hold enough context to reason across files and follow symbol usage correctly, it becomes useful for issue-sized work in my testing — but reliability still varies by task complexity.
 
 ## What I’m changing in my process
 
@@ -90,14 +90,17 @@ That mindset prevents the two common mistakes:
 
 ## Closing thought
 
-The most useful framing for Xcode 27 is not “AI can code now.”
+The most useful framing for Xcode 27, for me, is not “AI can code now.”
 
-It’s this: **the IDE is becoming an orchestration surface**.
+It’s this: **the IDE is becoming more of an orchestration surface**.
 
-For builders, that means the winning skill isn’t just writing code. It’s designing reliable loops between intent, execution, and verification.
+For builders, that suggests the winning skill isn’t just writing code. It’s designing reliable loops between intent, execution, and verification.
 
 If you’re testing this update, start with one bounded workflow and measure cycle time + rework. That tells you quickly whether the new surface is actually helping.
 
 ### Sources
 
 - [Xcode — Apple Developer](https://developer.apple.com/xcode/)
+  - Relevant Apple text (accessed 2026-06-11):
+    - “Xcode offers the tools you need to develop, test, and distribute apps for Apple platforms, including predictive code completion, generative intelligence powered by the best coding models and agents…”
+    - “Xcode also supports interacting with code using the large language model of your choice… including the advanced coding model and agents of Anthropic and OpenAI.”
