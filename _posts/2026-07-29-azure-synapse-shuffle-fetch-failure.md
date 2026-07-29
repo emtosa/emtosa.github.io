@@ -65,7 +65,7 @@ Shuffle fetch failure is rarely a single misconfiguration. It is a symptom of th
 
 ### Sources
 
-- [Apache Spark Configuration — Shuffle Behavior](https://spark.apache.org/docs/latest/configuration.html#shuffle-behavior) — `spark.shuffle.io.maxRetries`, `spark.shuffle.io.retryWait`, `spark.shuffle.io.connectionTimeout`, `spark.shuffle.io.backLog`, `spark.reducer.maxBlocksInFlightPerAddress`, `spark.reducer.maxReqsInFlight`, `spark.shuffle.detectCorrupt`, `spark.shuffle.service.enabled`.
+- [Apache Spark Configuration — Shuffle Behavior](https://spark.apache.org/docs/latest/configuration.html#shuffle-behavior) — `spark.shuffle.io.maxRetries`, `spark.shuffle.io.retryWait`, `spark.shuffle.io.connectionTimeout`, `spark.shuffle.io.connectionCreationTimeout`, `spark.shuffle.io.backLog`, `spark.reducer.maxBlocksInFlightPerAddress`, `spark.reducer.maxReqsInFlight`, `spark.shuffle.detectCorrupt`, `spark.shuffle.service.enabled`.
 - [Apache Spark Tuning Guide — Memory Usage of Reduce Tasks](https://spark.apache.org/docs/latest/tuning.html#memory-usage-of-reduce-tasks) — increase parallelism to shrink per-task working set; 2–3 tasks per core.
 - [Apache Spark Monitoring — Executor Task Metrics](https://spark.apache.org/docs/latest/monitoring.html#executor-task-metrics) — `shuffleReadMetrics`: `fetchWaitTime`, `remoteBlocksFetched`, `remoteBytesReadToDisk`.
 - [Optimize Spark jobs for performance — Azure Synapse Analytics](https://learn.microsoft.com/en-us/azure/synapse-analytics/spark/apache-spark-performance) — executor sizing (30 GB, <32 GB heap), `reduceByKey` over `groupByKey`, data skew salting.
