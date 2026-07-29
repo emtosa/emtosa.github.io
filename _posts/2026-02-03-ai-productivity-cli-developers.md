@@ -1,11 +1,19 @@
 ---
 layout: post
 title: "AI Productivity for CLI-First Developers"
-date: 2026-05-29 00:00:00 +0000
+date: 2026-02-03 00:00:00 +0000
 description: "Stop switching to browser chat tabs. Treat AI as a composable terminal tool — and keep your flow intact."
 image: /assets/images/ai-cli-productivity-og.svg
 tags: [ai, cli, productivity, developer-tools, github-copilot]
 ---
+
+> **Accuracy note (2026-07-29 audit):** This post was reviewed against current official documentation in July 2026 and contains inaccuracies relative to the current state of the tools described. The post is retained for its workflow reasoning; the specific factual issues are:
+>
+> The GitHub CLI Copilot extension (`gh copilot suggest` / `gh copilot explain`) has been retired; current terminal Copilot workflows use the standalone Copilot CLI with an agentic interface. Treat the `gh copilot suggest`/`explain` commands below as historical; confirm current terminal Copilot usage against the official Copilot CLI documentation.
+>
+> Reference docs to verify against:
+- GitHub Copilot CLI — https://docs.github.com/en/copilot/concepts/agents/about-copilot-cli
+
 
 ## Prerequisites
 

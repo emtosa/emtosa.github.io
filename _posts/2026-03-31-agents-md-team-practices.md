@@ -1,10 +1,18 @@
 ---
 layout: post
 title: "AGENTS.md: How Teams Share Copilot Practices Without Documentation"
-date: 2026-06-05 00:00:00 +0000
+date: 2026-03-31 00:00:00 +0000
 description: "Create an AGENTS.md file in your repo to teach Copilot (and your team) how to work. Here's what goes in it."
 tags: [ai, developer-tools, vscode, github-copilot, team-practices, documentation]
 ---
+
+> **Accuracy note (2026-07-29 audit):** This post was reviewed against current official documentation in July 2026 and contains inaccuracies relative to the current state of the tools described. The post is retained for its workflow reasoning; the specific factual issues are:
+>
+> Two corrections: (1) `AGENTS.md` support predates May 2026 — the historical claim below is wrong. (2) `AGENTS.md` supports nested/scoped instruction files (a root file supplies repository-wide instructions; nested files apply more specific instructions by directory), not only a root file as stated. The cited `agents-md-instructions` URL returns 404. Refer to current GitHub custom-instructions documentation.
+>
+> Reference docs to verify against:
+- GitHub custom instructions / AGENTS.md — https://docs.github.com/en/copilot/customizing-copilot
+
 
 You onboard a new developer. You want them to know: "We use error boundaries for React, we validate on the server not the client, we name test files with .test.ts."
 

@@ -1,10 +1,19 @@
 ---
 layout: post
 title: "Building iOS/iPadOS Games the AI-Native Way"
-date: 2026-05-29 00:00:00 +0000
+date: 2026-05-08 00:00:00 +0000
 description: "Stop using agents as a chat window. Treat them as roles in your pipeline — and build SpriteKit games with the context-switch tax removed."
 tags: [ai, agents, vscode, github-copilot, ios, ipados, spritekit, gameplaykit, swift, game-dev]
 ---
+
+> **Accuracy note (2026-07-29 audit):** This post was reviewed against current official documentation in July 2026 and contains inaccuracies relative to the current state of the tools described. The post is retained for its workflow reasoning; the specific factual issues are:
+>
+> Two refinements: (1) Explicit `@workspace` usage has been deprecated in current VS Code in favor of automatic workspace context/tool selection in agent/chat workflows. (2) The absolute claim that the coding agent 'always uses a remote environment where local checkout and main are never touched' applies to GitHub's cloud coding agent; VS Code exposes multiple agent types including local and cloud/background sessions. Distinguish GitHub Copilot coding agent (cloud) from local VS Code agents.
+>
+> Reference docs to verify against:
+- VS Code agent types — https://code.visualstudio.com/docs/agents
+- GitHub Copilot coding agent — https://docs.github.com/en/copilot/concepts/agents/about-copilot-coding-agent
+
 
 # Building iOS/iPadOS Games the AI-Native Way
 

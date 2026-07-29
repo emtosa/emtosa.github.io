@@ -1,10 +1,18 @@
 ---
 layout: post
 title: "Remote Agent Execution: Running Copilot on Your Build Server"
-date: 2026-05-31 00:00:00 +0000
+date: 2026-02-24 00:00:00 +0000
 description: "GitHub Copilot can now execute on remote machines (SSH, Dev Tunnels) instead of just your laptop. What this means for CI/CD workflows."
 tags: [ai, developer-tools, vscode, github-copilot, devops, deployment]
 ---
+
+> **Accuracy note (2026-07-29 audit):** This post was reviewed against current official documentation in July 2026 and contains inaccuracies relative to the current state of the tools described. The post is retained for its workflow reasoning; the specific factual issues are:
+>
+> The description below of a detachable 'run agent on remote machine? Yes/No' prompt, one-way file synchronization, and automatic CI-spawned Copilot agents does not match the documented VS Code Remote-SSH + Copilot workflow. The documented pattern is using agent mode inside an active VS Code Remote-SSH workspace (the extension host and terminal run against the remote host during your session). There is no documented detachable Copilot execution service or sync model as described.
+>
+> Reference docs to verify against:
+- VS Code Remote-SSH — https://code.visualstudio.com/docs/remote/ssh
+
 
 For months, Copilot was something you ran on your laptop. You opened a chat, it read your code, it suggested fixes—all locally scoped to your machine.
 
