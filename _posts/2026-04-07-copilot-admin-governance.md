@@ -1,10 +1,18 @@
 ---
 layout: post
 title: "Copilot Admin Controls: Governance, Permissions, and Audit Logs"
-date: 2026-06-06 00:00:00 +0000
+date: 2026-04-07 00:00:00 +0000
 description: "GitHub Enterprise admins can now control where Copilot can execute, which models teams use, and audit all agent activity."
 tags: [ai, developer-tools, vscode, github-copilot, governance, enterprise]
 ---
+
+> **Accuracy note (2026-07-29 audit):** This post was reviewed against current official documentation in July 2026 and contains inaccuracies relative to the current state of the tools described. The post is retained for its workflow reasoning; the specific factual issues are:
+>
+> The governance controls attributed to GitHub Copilot below — weekly API-call quotas, SSH-host allowlists, path-level code-deny rules, cache toggles, complete prompt/file/token audit records, team spend allocations that disable Copilot, and operation-specific approval groups — are not documented GitHub Copilot organization controls. Documented Copilot org controls cover seat management, feature/model policies, content exclusion, usage metrics/budgets, and published audit-log events. Treat the detailed policy examples below as hypothetical, not built-in GitHub controls.
+>
+> Reference docs to verify against:
+- GitHub Copilot administration — https://docs.github.com/en/copilot/managing-copilot
+
 
 When you enable Copilot for an organization, administrators want to know:
 - Which developers are using it?

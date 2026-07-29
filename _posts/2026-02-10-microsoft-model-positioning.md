@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft’s AI Positioning vs OpenAI, Anthropic, Google, Meta, and xAI (2026)"
-date: 2026-05-29 00:00:00 +0000
+date: 2026-02-10 00:00:00 +0000
 description: "A strategic view: Microsoft’s edge is less about owning one best model and more about enterprise deployment economics—if routing, governance, and cost transparency stay strong."
 tags: [ai, microsoft, openai, anthropic, google, meta, xai, strategy, github-copilot, vscode]
 ---

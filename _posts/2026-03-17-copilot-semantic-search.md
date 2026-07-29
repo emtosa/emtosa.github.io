@@ -1,10 +1,18 @@
 ---
 layout: post
 title: "Semantic Search in Copilot: Finding Code by Meaning, Not Just Keywords"
-date: 2026-06-03 00:00:00 +0000
+date: 2026-03-17 00:00:00 +0000
 description: "GitHub Copilot's semantic search understands code intent, not just string matching. How to use it to navigate large codebases faster."
 tags: [ai, developer-tools, vscode, github-copilot, search, performance]
 ---
+
+> **Accuracy note (2026-07-29 audit):** This post was reviewed against current official documentation in July 2026 and contains inaccuracies relative to the current state of the tools described. The post is retained for its workflow reasoning; the specific factual issues are:
+>
+> The `/search` command and the `copilot.search.enabled` / `copilot.search.indexing` / `copilot.search.scope` settings described below are not documented VS Code/Copilot APIs. Current agentic code search is exposed through agent/search tooling rather than this configuration schema. The cited VS Code and GitHub source URLs below return 404. Treat the command/settings block as unverified; confirm current code-search tooling against official VS Code documentation.
+>
+> Reference docs to verify against:
+- VS Code agent documentation — https://code.visualstudio.com/docs/agents
+
 
 Grep and string search are fast, but they require you to know exactly what to search for. If you are looking for "error handling logic," a simple grep for `error` returns thousands of matches.
 

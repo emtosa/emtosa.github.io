@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "What Xcode 27 Means for Agentic iOS Workflows"
-date: 2026-06-11 00:00:00 +0000
+date: 2026-05-05 00:00:00 +0000
 description: "Apple’s Xcode 27 update reframes coding agents from novelty to daily workflow surface. Here’s what changed and how I’m adapting my process."
 tags: [ai, ios, xcode, developer-tools, workflow]
 ---
