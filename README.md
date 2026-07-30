@@ -1,58 +1,46 @@
-# Kernel — emtosa.com
+# emtosa.com
 
-A Jekyll-based GitHub Pages technical-writing blog covering AI, productivity,
-developer tools, and workflows. Live at **https://emtosa.com**.
+> **This site is redirect-only.** As of 2026-07-29, emtosa.com has been
+> consolidated into **noraze.com**. All pages serve a meta-refresh redirect
+> to the equivalent path on noraze.com with `noindex`. The 34 blog posts
+> were migrated to noraze.com. This repo remains as the redirect host.
 
-## Stack
+## Content
 
-- Jekyll with the Minima theme
-- `jekyll-feed` (RSS) and `jekyll-seo-tag` (meta tags) plugins
-- Hosted on GitHub Pages (builds on push to `main`, no CI workflow needed)
-- Custom domain: emtosa.com (CNAME)
+emtosa.com was a Jekyll-based GitHub Pages technical-writing blog covering
+AI, productivity, developer tools, and workflows. The content pillars were
+Copilot / agentic AI, Azure / Spark / Kafka data engineering, SwiftUI /
+iOS / App Store product engineering, and deep-work / autonomy systems.
 
-## Local preview (optional)
+## Redirect behavior
 
-```sh
-gem install bundler jekyll
-bundle exec jekyll serve
-# → http://localhost:4000
+Every HTML page contains:
+
+```html
+<meta http-equiv="refresh" content="0; url=https://noraze.com/<equivalent-path>/">
 ```
 
-## Writing a new post
-
-Use the helper script:
-
-```sh
-./scripts/new-post.sh "my-post-slug" "My Post Title"
-```
-
-Then edit the created file in `_posts/`, commit, and push to `main`. GitHub
-Pages rebuilds automatically.
-
-## Editorial Coherence Checklist
-
-Before publishing any post, confirm:
-
-- [ ] Opening includes Hook → Thesis → Audience in the first ~120 words
-- [ ] Scope is explicit (for example: "As of <month year>, directional analysis")
-- [ ] Comparison lens is consistent across sections
-- [ ] Claims use calibrated language ("likely", "currently", "depends on execution")
-- [ ] Risks and disconfirming conditions are included
-- [ ] Practical "what to do next" guidance is present
-- [ ] Ending includes a concise decision checklist or litmus test
-- [ ] Title, description, and tags match the post's actual scope
+Plus `<link rel="canonical">` and `noindex` directives pointing to
+noraze.com.
 
 ## Repo structure
 
 ```
 emtosa.com/
-├── _config.yml          # Jekyll site config (title, url, plugins)
-├── _posts/              # 34 Markdown posts
-├── assets/
-│   └── images/          # OG image
-├── scripts/
-│   └── new-post.sh      # Low-friction post authoring helper
+├── index.html           # Redirect to noraze.com/
+├── _posts/              # 34 Markdown posts (archived, not served)
+├── blog/                # Redirect-only HTML pages
+├── feed/                # Redirect-only RSS
+├── search/              # Redirect-only search
 ├── CNAME                # Custom domain: emtosa.com
-├── index.md             # Home page (lists posts)
+├── _config.yml          # Jekyll site config (archived)
 └── README.md            # This file
 ```
+
+## Notes
+
+- The Jekyll build artifacts (`_site/`, `.jekyll-cache/`) are gitignored
+  and not deployed. GitHub Pages serves the static redirect HTML directly.
+- The blog posts in `_posts/` are preserved as an archive but are not
+  rendered by Jekyll anymore (the pages in `blog/` are static redirect HTML).
+- Active content lives at **noraze.com** (repo: `foculoom/noraze.com`).
