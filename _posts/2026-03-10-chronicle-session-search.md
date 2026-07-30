@@ -1,10 +1,18 @@
 ---
 layout: post
 title: "Chronicle: Searching Your Prior Coding Sessions to Find Context Fast"
-date: 2026-06-02 00:00:00 +0000
+date: 2026-03-10 00:00:00 +0000
 description: "Chronicle lets you search and resurface prior Copilot sessions, file changes, and decisions. When to use it instead of git log."
 tags: [ai, developer-tools, vscode, github-copilot, workflow, productivity]
 ---
+
+> **Accuracy note (2026-07-29 audit):** This post was reviewed against current official documentation in July 2026 and contains inaccuracies relative to the current state of the tools described. The post is retained for its workflow reasoning; the specific factual issues are:
+>
+> The Chronicle data inventory below ('key decisions' field, 'full chat transcripts off by default') does not match the VS Code 1.123 documentation. Per the official release notes, synced sessions capture the conversation, files touched, repository context, and referenced PRs/issues/commits. The cited `/docs/copilot/chronicle` URL is not a valid documentation path. Refer to the official Session Sync and Chronicle documentation.
+>
+> Reference docs to verify against:
+- VS Code 1.123 — Session Sync and Chronicle — https://code.visualstudio.com/updates/v1_123#_session-sync-and-chronicle
+
 
 You are working on a bug fix. You remember having a similar problem two months ago, and you know Copilot helped you think through it. But where?
 

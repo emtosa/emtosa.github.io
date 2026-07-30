@@ -6,6 +6,14 @@ description: "Kafka OAuth (SASL/OAUTHBEARER) failures break Spark-to-Kafka pipel
 tags: [azure, spark, kafka, oauth, synapse, troubleshooting, security]
 ---
 
+> **Accuracy note (2026-07-29 audit):** This post was reviewed against current official documentation in July 2026 and contains inaccuracies relative to the current state of the tools described. The post is retained for its workflow reasoning; the specific factual issues are:
+>
+> Two refinements: (1) Current Kafka supports standards-based OAuth/OIDC token acquisition and validation using built-in handlers and properties (`sasl.oauthbearer.token.endpoint.url`, client credentials in JAAS, `sasl.oauthbearer.jwks.endpoint.url`, issuer, audience); a custom `AuthenticateCallbackHandler` is not universally required — reserve custom callbacks for unsupported token-acquisition paths. (2) When the minimum refresh period plus buffer exceeds remaining token lifetime, Kafka ignores those two constraints; this does not itself mean refresh 'may never' be scheduled.
+>
+> Reference docs to verify against:
+- Apache Kafka — SASL/OAUTHBEARER — https://kafka.apache.org/documentation/#security_sasl
+
+
 When a Spark structured-streaming or batch job talks to a Kafka cluster secured with OAuth, a failure in the auth handshake surfaces as a vague `SASL authentication failed` or a stream that silently retries and never makes progress. Unlike a plain SASL/PLAIN failure (wrong password, obvious), OAuth failures sit at the intersection of three systems — the Kafka client, the OAuth authorization server, and the token-refresh logic inside the client — and the error message rarely tells you which one is at fault.
 
 This post covers how the Kafka SASL/OAUTHBEARER handshake actually works, the failure modes you will hit in a Spark pipeline, and the specific configuration that fixes each one. Every config key below is a real Kafka client property, cited to the official Apache Kafka documentation.

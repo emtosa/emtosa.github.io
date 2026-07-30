@@ -1,10 +1,18 @@
 ---
 layout: post
 title: "The Agents Window: How to Actually Run Multiple AI Tasks Side by Side in VS Code"
-date: 2026-05-30 00:00:00 +0000
+date: 2026-02-17 00:00:00 +0000
 description: "VS Code's new Agents window lets you orchestrate parallel AI sessions without losing context. Here's how to use it, and why it matters for real work."
 tags: [ai, developer-tools, vscode, github-copilot, workflow, agents]
 ---
+
+> **Accuracy note (2026-07-29 audit):** This post was reviewed against current official documentation in July 2026 and contains inaccuracies relative to the current state of the tools described. The post is retained for its workflow reasoning; the specific factual issues are:
+>
+> The VS Code Agents window is a Preview feature and its controls differ from the inventory described here. As of VS Code 1.123 (released June 3, 2026), the Agents window supports multiple open sessions side-by-side, pinning, drag-and-drop, 'Open to the Side', and a maximize action — not the 'session name / unread count / quick-switch' controls listed below. Refer to the official VS Code 1.123 release notes for the current UI.
+>
+> Reference docs to verify against:
+- VS Code 1.123 release notes — https://code.visualstudio.com/updates/v1_123
+
 
 Most developers think "agent mode" means watching Copilot solve the whole problem in one shot. In practice, real work is messier: you need planning notes, reference implementations, and review passes all happening at once—but not tangled together.
 

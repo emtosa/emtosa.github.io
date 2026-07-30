@@ -1,10 +1,19 @@
 ---
 layout: post
 title: "Autonomous Testing and Validation: Copilot Agents That Write Tests and Catch Bugs"
-date: 2026-06-09 00:00:00 +0000
+date: 2026-04-28 00:00:00 +0000
 description: "GitHub Copilot agents can now auto-generate tests, run them, find bugs, and suggest fixes. What this means for your QA process."
 tags: [ai, developer-tools, vscode, github-copilot, testing, quality]
 ---
+
+> **Accuracy note (2026-07-29 audit):** This post was reviewed against current official documentation in July 2026 and contains inaccuracies relative to the current state of the tools described. The post is retained for its workflow reasoning; the specific factual issues are:
+>
+> The 'Copilot → Agents → Testing Agent' menu and the `copilot-cli test-auto --coverage 80 --timeout 5m` command below are not documented Copilot CLI commands or built-in testing agents. The GitHub Actions example uses `actions/checkout@v3` (a deprecated major) and `npm install` where a maintained checkout major and `npm ci` are current best practice. Treat the specific command/menu as unverified; the general agent-mode test-authoring pattern is sound.
+>
+> Reference docs to verify against:
+- VS Code agent documentation — https://code.visualstudio.com/docs/agents
+- GitHub Copilot CLI — https://docs.github.com/en/copilot/concepts/agents/about-copilot-cli
+
 
 For years, testing stayed manual. Developers wrote code, then either wrote tests themselves (slow) or skipped them (risky).
 
