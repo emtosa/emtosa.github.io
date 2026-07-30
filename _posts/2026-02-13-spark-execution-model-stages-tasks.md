@@ -14,7 +14,7 @@ This post walks through that model. Every claim below traces to the official Spa
 
 <figure style="margin:1.5em 0;">
   <img src="/assets/images/spark-execution-model-dag.svg" alt="Diagram of the Spark execution model: a DAG sliced into stages at every shuffle, each stage running a wave of tasks on executor cores." style="width:100%;max-width:720px;height:auto;" loading="lazy" />
-  <figcaption style="font-size:0.85em;color:#475569;margin-top:0.4em;">A Spark job compiles into a DAG; the DAG is sliced into stages at every shuffle (wide transformation). Each stage runs a wave of tasks on executor cores — one task per partition per core.</figcaption>
+  <figcaption style="font-size:0.85em;color:#475569;margin-top:0.4em;">A Spark job compiles into a DAG; the DAG is sliced into stages at every shuffle (wide transformation). Each stage runs a wave of tasks — one task per partition; concurrency is bounded by available executor cores. <a href="/assets/images/spark-execution-model-dag.svg" target="_blank" rel="noopener">View full-size diagram</a>.</figcaption>
 </figure>
 
 ## Driver and executors

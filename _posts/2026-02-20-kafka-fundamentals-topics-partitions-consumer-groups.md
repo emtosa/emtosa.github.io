@@ -11,8 +11,8 @@ tags: [kafka, data-engineering, streaming, distributed-computing]
 Kafka is a distributed, partitioned, replicated commit log. Almost every confusing Kafka behavior — why adding consumers doesn't always increase throughput, why you can lose messages or read them twice, why a rebalance stalls your pipeline — falls out of three concepts: **topics**, **partitions**, and **consumer groups**. This post covers those and how they determine parallelism and delivery semantics. Every claim below traces to the official Apache Kafka documentation.
 
 <figure style="margin:1.5em 0;">
-  <img src="/assets/images/kafka-consumer-groups.svg" alt="Diagram of a Kafka topic with 4 partitions distributed across a consumer group of 3 consumers, plus an idle 4th consumer demonstrating the partitions-as-parallelism-ceiling rule." style="width:100%;max-width:720px;height:auto;" loading="lazy" />
-  <figcaption style="font-size:0.85em;color:#475569;margin-top:0.4em;">A topic's partition count is the parallelism ceiling for a consumer group. Each partition goes to exactly one consumer; extra consumers idle. Rebalances halt the group while partitions are reassigned.</figcaption>
+  <img src="/assets/images/kafka-consumer-groups.svg" alt="Diagram of a Kafka topic with 4 partitions distributed across a consumer group of 4 active consumers (one partition each), plus an idle 5th consumer demonstrating the partitions-as-parallelism-ceiling rule." style="width:100%;max-width:720px;height:auto;" loading="lazy" />
+  <figcaption style="font-size:0.85em;color:#475569;margin-top:0.4em;">A topic's partition count is the parallelism ceiling for a consumer group. Each partition goes to exactly one consumer; extra consumers idle. Rebalances halt the group while partitions are reassigned. <a href="/assets/images/kafka-consumer-groups.svg" target="_blank" rel="noopener">View full-size diagram</a>.</figcaption>
 </figure>
 
 ## The commit-log model

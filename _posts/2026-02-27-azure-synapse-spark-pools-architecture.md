@@ -12,7 +12,7 @@ Azure Synapse Analytics is Microsoft's unified analytics service. It bundles sev
 
 <figure style="margin:1.5em 0;">
   <img src="/assets/images/synapse-spark-pools-architecture.svg" alt="Diagram of an Azure Synapse workspace containing pool types (dedicated SQL, serverless SQL, Apache Spark, pipelines), the Spark pool provisioning knobs, and the Synapse/Spark ownership boundary." style="width:100%;max-width:720px;height:auto;" loading="lazy" />
-  <figcaption style="font-size:0.85em;color:#475569;margin-top:0.4em;">A Synapse workspace contains several pool types. The Spark pool is provisioned with node size, count range, and autoscale. Synapse controls provisioning; Spark controls execution — knowing which layer owns a failure is the first step to fixing it.</figcaption>
+  <figcaption style="font-size:0.85em;color:#475569;margin-top:0.4em;">A Synapse workspace contains several pool types. The Spark pool is provisioned with node size, count range, and autoscale. Synapse controls provisioning; Spark controls execution — knowing which layer owns a failure is the first step to fixing it. <a href="/assets/images/synapse-spark-pools-architecture.svg" target="_blank" rel="noopener">View full-size diagram</a>.</figcaption>
 </figure>
 
 ## What Synapse Analytics is
