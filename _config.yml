@@ -8,6 +8,10 @@ theme: minima
 markdown: kramdown
 highlighter: rouge
 
+# Navigation pages (Minima header_pages)
+header_pages:
+  - search.md
+
 # Plugins
 plugins:
   - jekyll-feed
@@ -33,3 +37,4 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - .git/
+  - _pagefind_stubs/
