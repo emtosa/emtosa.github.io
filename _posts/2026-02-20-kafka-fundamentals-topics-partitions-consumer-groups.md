@@ -42,7 +42,12 @@ A **consumer group** is a set of consumers that jointly consume a topic. Kafka a
 
 Different consumer groups are independent — each group reads the whole topic at its own offset. This is the publish-subscribe property: one topic, many independent readers.
 
-**Rebalances** happen when the group membership changes (a consumer joins, leaves, or is considered dead after the session timeout). During a rebalance, partitions are reassigned, and **no consumer in the group can process records until the rebalance completes**. This is why long-running or fragile consumers stall pipelines: a consumer that doesn't poll often enough is kicked out (session timeout), triggering a rebalance that briefly halts the group. Mitigations include tuning the session/poll timeouts and using cooperative (incremental) rebalancing where supported.
+**Rebalances** happen when the group membership changes (a consumer joins, leaves, or is considered dead). During a rebalance, partitions are reassigned, and **no consumer in the group can process records until the rebalance completes**. This is why long-running or fragile consumers stall pipelines — and there are two distinct timeout mechanisms to keep straight:
+
+- **`session.timeout.ms`** — missed heartbeats. If a consumer stops sending heartbeats for this long, the broker considers it dead and triggers a rebalance.
+- **`max.poll.interval.ms`** — the maximum time a consumer can spend processing between `poll()` calls. If processing one batch takes longer than this, the consumer is kicked from the group even though it's still heartbeating, because the broker assumes it's stuck.
+
+A consumer that processes slowly (long batches) hits `max.poll.interval.ms`; a consumer that's actually dead or paused hits `session.timeout.ms`. Both end in a rebalance that briefly halts the group. Mitigations include tuning the right timeout for the failure mode, keeping `max.poll.interval.ms` above your worst-case processing time, and using cooperative (incremental) rebalancing where supported.
 
 ## Offsets: the unit of position
 
