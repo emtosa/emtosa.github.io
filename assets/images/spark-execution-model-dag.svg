@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" role="img" aria-labelledby="t1 d1">
   <title id="t1">Spark execution model: driver, executors, stages, and tasks</title>
-  <desc id="d1">A Spark job compiles into a DAG. The DAG is sliced into stages at every shuffle (wide transformation). Each stage runs a wave of tasks on executor cores; tasks process one partition each.</desc>
+  <desc id="d1">A Spark job compiles into a DAG. The DAG is sliced into stages at every shuffle (wide transformation). Each stage runs a wave of tasks — one task per partition; concurrency is bounded by available executor cores.</desc>
   <defs>
     <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
       <path d="M0,0 L9,3 L0,6 z" fill="#1f2937"/>
