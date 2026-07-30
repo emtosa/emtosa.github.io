@@ -1,10 +1,19 @@
 ---
 layout: post
 title: "What Spark Executor Exit Code 143 Means (and How to Fix It)"
-date: 2026-07-29 00:00:00 +0000
+date: 2026-07-24 00:00:00 +0000
 description: "Executor exit code 143 is SIGTERM — your executor was told to shut down. On Azure Synapse Spark, here is how to tell whether it is OOM, preemption, or autoscale, and what to do."
 tags: [azure, spark, synapse, executor, troubleshooting, performance]
 ---
+
+> **Accuracy note (2026-07-29 audit):** This post was reviewed against current official documentation in July 2026 and contains inaccuracies relative to the current state of the tools described. The post is retained for its workflow reasoning; the specific factual issues are:
+>
+> Two refinements: (1) YARN container-memory failures are commonly reported through YARN container exit diagnostics and may produce SIGKILL/exit 137 or YARN-specific exit statuses; exit 143 alone does not establish OOM. Use YARN diagnostics to identify the cause. (2) `peakExecutionMemory` is a Spark **task metric**, not an executor-level metric; cite it as a task metric. The 'raise memory so the sum fits the YARN container' framing reverses the relationship — Spark derives the requested container size from heap + overhead/off-heap, subject to the node limit.
+>
+> Reference docs to verify against:
+- Apache Spark — configuration & monitoring — https://spark.apache.org/docs/latest/configuration.html
+- Apache Spark — monitoring metrics — https://spark.apache.org/docs/latest/monitoring.html
+
 
 Exit code 143 is one of the most misread errors in a Spark cluster. You see `Executor exit code: 143` in the driver logs, the executor is gone, the stage either retries or fails, and the natural reaction is to assume the executor crashed. It did not. Exit code 143 means the executor received a `SIGTERM` — a *termination signal* — and shut down. Something *deliberately* asked it to stop.
 

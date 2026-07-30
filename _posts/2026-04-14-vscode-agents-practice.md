@@ -1,10 +1,18 @@
 ---
 layout: post
 title: "VS Code 1.123 in Real Work: What Actually Changed for Agentic Coding"
-date: 2026-06-07 00:00:00 +0000
+date: 2026-04-14 00:00:00 +0000
 description: "After using VS Code 1.123 in daily engineering work, here is what improved, what stayed hard, and what workflow changes are worth adopting right now."
 tags: [ai, developer-tools, vscode, github-copilot, workflow]
 ---
+
+> **Accuracy note (2026-07-29 audit):** This post was reviewed against current official documentation in July 2026 and contains inaccuracies relative to the current state of the tools described. The post is retained for its workflow reasoning; the specific factual issues are:
+>
+> This post is dated April 14 but describes VS Code 1.123 as a released product. VS Code 1.123 was released June 3, 2026, so a first-person 'released version' account in April is chronologically impossible unless it used an Insiders/pre-release build. The features described (session sync, chronicle, agents window) are real as of the June 3 release; the date does not align with general availability.
+>
+> Reference docs to verify against:
+- VS Code 1.123 release notes (June 3, 2026) — https://code.visualstudio.com/updates/v1_123
+
 
 I have read a lot of “agentic coding” takes this year, and most are either hype or fear.
 

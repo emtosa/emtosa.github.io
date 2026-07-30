@@ -1,10 +1,18 @@
 ---
 layout: post
 title: "Fixing Shuffle Fetch Failure in Azure Synapse Spark"
-date: 2026-07-29 00:00:00 +0000
+date: 2026-05-12 00:00:00 +0000
 description: "Shuffle fetch failures kill long-running Spark jobs on Azure Synapse. Here is how to read the error, find the root cause, and tune your way out of it."
 tags: [azure, spark, synapse, shuffle, troubleshooting, performance]
 ---
+
+> **Accuracy note (2026-07-29 audit):** This post was reviewed against current official documentation in July 2026 and contains inaccuracies relative to the current state of the tools described. The post is retained for its workflow reasoning; the specific factual issues are:
+>
+> Two refinements: (1) Enabling `spark.shuffle.service.enabled` only preserves shuffle files after executor removal when the external shuffle service is installed and configured by the cluster manager — setting the application property alone does not create the service; verify Synapse's configured shuffle-preservation mechanism before relying on this. Spark's modern dynamic-allocation docs also describe shuffle-tracking/decommission-based alternatives. (2) The 'maximum delay capped at maxRetries * retryWait' should be read as the configured retry-wait budget, not an end-to-end fetch-delay cap.
+>
+> Reference docs to verify against:
+- Apache Spark — dynamic allocation / external shuffle service — https://spark.apache.org/docs/latest/configuration.html
+
 
 A shuffle fetch failure is one of the most frustrating errors you can hit in an Azure Synapse Spark pool. The job runs fine for a while, then a stage suddenly fails with a `FetchFailedException`, Spark retries the stage, and if the underlying problem persists the whole job eventually aborts. The error message is thin — it points at a *symptom* (a reduce task could not pull map output from another executor), not the *cause*.
 

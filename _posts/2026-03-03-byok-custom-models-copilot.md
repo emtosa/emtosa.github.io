@@ -1,10 +1,18 @@
 ---
 layout: post
 title: "Bring Your Own Key (BYOK): Using Claude, ChatGPT, or Your Own Model with Copilot"
-date: 2026-06-01 00:00:00 +0000
+date: 2026-03-03 00:00:00 +0000
 description: "GitHub Copilot now supports connecting your own API keys so you can use Claude, OpenAI, or other models. Here's what you can control."
 tags: [ai, developer-tools, vscode, github-copilot, configuration, enterprise]
 ---
+
+> **Accuracy note (2026-07-29 audit):** This post was reviewed against current official documentation in July 2026 and contains inaccuracies relative to the current state of the tools described. The post is retained for its workflow reasoning; the specific factual issues are:
+>
+> The 'Settings → Copilot → Model Provider' configuration form described below is not the current VS Code BYOK flow; current VS Code configures provider models through the chat model picker's 'Manage Models'. The on-premises-Claude-proxy privacy guarantee and the hard-coded per-1M-token price range below are not supported by current provider/Copilot documentation. Confirm the current Manage Models flow and current provider pricing against official VS Code and provider documentation.
+>
+> Reference docs to verify against:
+- VS Code language models / BYOK — https://code.visualstudio.com/updates/v1_123
+
 
 For years, GitHub Copilot meant OpenAI's models (GPT-4, GPT-5). You could not swap in Claude, Gemini, or your own fine-tuned model.
 

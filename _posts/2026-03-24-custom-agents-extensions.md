@@ -1,10 +1,18 @@
 ---
 layout: post
 title: "Building Custom Copilot Agents with Extensions"
-date: 2026-06-04 00:00:00 +0000
+date: 2026-03-24 00:00:00 +0000
 description: "GitHub Copilot extensions let you build specialized agents for your team's tools and workflows. Here's how to start."
 tags: [ai, developer-tools, vscode, github-copilot, extensions, customization]
 ---
+
+> **Accuracy note (2026-07-29 audit):** This post was reviewed against current official documentation in July 2026 and contains inaccuracies relative to the current state of the tools described. The post is retained for its workflow reasoning; the specific factual issues are:
+>
+> GitHub Copilot Extensions were sunset in 2025 in favor of MCP-based integrations. The `copilot-extension.yaml` manifest and the Marketplace/organization deployment flow described below are not the current Copilot Extension or custom-agent surface. Treat the implementation section below as historical; current custom-agent integration uses MCP servers and current VS Code custom-agent files.
+>
+> Reference docs to verify against:
+- VS Code MCP documentation — https://code.visualstudio.com/docs/mcp
+
 
 Standard Copilot is general-purpose. It can code, debug, and suggest—but it does not know your team's internal APIs, deployment process, or business logic.
 

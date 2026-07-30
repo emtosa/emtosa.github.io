@@ -1,10 +1,18 @@
 ---
 layout: post
 title: "Running Multiple AI Agents in One Workspace: Orchestration Without Chaos"
-date: 2026-06-08 00:00:00 +0000
+date: 2026-04-21 00:00:00 +0000
 description: "VS Code now supports multiple AI agents (Copilot, Claude, OpenAI agents) working in parallel. How to coordinate them without them fighting each other."
 tags: [ai, developer-tools, vscode, agents, workflow, coordination]
 ---
+
+> **Accuracy note (2026-07-29 audit):** This post was reviewed against current official documentation in July 2026 and contains inaccuracies relative to the current state of the tools described. The post is retained for its workflow reasoning; the specific factual issues are:
+>
+> The 'single Agents panel listing Copilot, Claude, and custom agents with each agent reading prior agents' shared context' described below does not match the VS Code Agents window model. The Agents window manages sessions; installing a separate Claude extension or selecting a model does not create interoperable agents that automatically share read-only histories. Only one session is active at a time; cross-session context transfer is manual. Treat the automatic shared-context claim as unverified.
+>
+> Reference docs to verify against:
+- VS Code 1.123 — Agents window (Preview) — https://code.visualstudio.com/updates/v1_123#_agents-window-preview
+
 
 For years, VS Code was single-agent. You had Copilot. If you wanted to use another AI service, you opened a separate chat window and manually copied results between them.
 
