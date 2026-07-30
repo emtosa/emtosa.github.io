@@ -47,7 +47,7 @@ Before publishing any post, confirm:
 ```
 emtosa.com/
 ├── _config.yml          # Jekyll site config (title, url, plugins)
-├── _posts/              # 14 Markdown posts (2026-05-29 to 2026-06-09)
+├── _posts/              # 34 Markdown posts
 ├── assets/
 │   └── images/          # OG image
 ├── scripts/
