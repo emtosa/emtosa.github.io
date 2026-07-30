@@ -58,7 +58,7 @@ The crucial distinction: the bearer token is not expired — **it can't be acqui
 **The fix:**
 - **Prefer managed identity.** No cert in memory, no expiry to trap you. The Event Hubs and Key Vault docs both call this the recommended default for Azure-resident workloads.
 - **If you must use a cert, re-read it on each token refresh.** The handler should fetch the latest cert version from Key Vault on each token-acquisition call, not cache it in a static field. Whether your Azure Identity SDK version does this automatically is `<verify>` against your SDK version — some SDK clients cache the credential for the JVM lifetime, which is exactly the trap.
-- **If neither is possible, restart the job after cert renewal.** Schedule a job restart shortly after the cert renewal window so the job picks up the new cert before the old one expires. Operational, not elegant, but it's the documented-pattern fallback.
+- **If neither is possible, restart the job after cert renewal.** Schedule a job restart shortly after the cert renewal window so the job picks up the new cert before the old one expires. Operational, not elegant, but it's the documented-pattern fallback. **Precondition:** the renewed cert's public key must be registered on the Entra ID app registration (with an overlap period before the old cert expires) — Entra ID validates the `client_assertion` against registered certs, so a restart only works if the new cert is registered. This is a coordinated Key Vault + Entra app-registration rotation, not just a Key Vault renewal.
 
 ## The restart strategy that survives all three
 

@@ -91,7 +91,7 @@ People reach for Kafka producer tuning (`acks`, `retries`, `batch.size`, `linger
 
 - **Throughput Units (TUs) / Processing Units (PUs).** Event Hubs scales by the TUs or PUs you purchase. If your producer exceeds the ingress quota for your TU allotment, Event Hubs throttles — the producer sees backpressure or errors, not a slow broker. Auto-Inflate (Standard tier) scales TUs up automatically when you hit the limit; without it, you are throttled. This is a capacity/quotas problem, not a producer-tuning problem, and it's owned at the namespace, not in the Spark job config.
 - **Tier-gated features.** Compression (`gzip` only), Kafka transactions, and Kafka Streams are supported on Premium/Dedicated tiers (some in preview). If you enable compression on a Standard-tier namespace and your job assumes it's working, you may be silently not getting the throughput benefit. Verify the tier supports the feature before relying on it.
-- **The single endpoint.** All partitions route through one stable virtual IP. You don't tune broker lists; you don't add brokers. Scaling is a control-plane operation on the namespace, not a client-side change.
+- **The single endpoint.** Per the Event Hubs Kafka overview, Event Hubs uses a single stable virtual IP address as the namespace endpoint, so all partitions route through it — you don't tune broker lists, you don't add brokers. Scaling is a control-plane operation on the namespace, not a client-side change.
 
 ## The failure-mode map
 
