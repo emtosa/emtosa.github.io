@@ -23,7 +23,7 @@ The total container size the cluster manager sees (and the limit YARN enforces b
 
 ## The unified memory manager (inside the heap)
 
-Inside the JVM heap, Spark uses the **unified memory manager** (default since Spark 1.6). It divides the heap (after a reserved fraction, `spark.memory.reservedFraction` / `spark.memory.fraction`) into two pools that share a soft boundary:
+Inside the JVM heap, Spark uses the **unified memory manager** (default since Spark 1.6). It carves off a reserved region (system-internal, not user-settable) and divides the remaining usable heap (sized by `spark.memory.fraction`, default 0.6) into two pools that share a soft boundary:
 
 - **Execution memory** — for shuffles, joins, aggregations, sorts. The work Spark does during a transformation. This pool can borrow from storage.
 - **Storage memory** — for cached/persisted blocks and broadcast variables. This pool can be evicted to give back to execution when execution needs it.

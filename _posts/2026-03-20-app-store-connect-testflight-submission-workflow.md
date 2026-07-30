@@ -36,7 +36,7 @@ For App Store distribution the profile is a "App Store" distribution profile (no
 
 From the Xcode Organizer, "Distribute App → App Store Connect." Xcode validates the archive (checks signing, entitlements, the API usage, and several pre-submission checks) and uploads the build to App Store Connect. Once uploaded, the build appears in App Store Connect under the app's "TestFlight" tab within a few minutes (longer if Apple's processing is backed up).
 
-You can also upload from the command line with `xcrun altool --upload-app` (older) or the modern notarization-equivalent upload tools — useful for CI. The Xcode Organizer path is the simple dev-loop path; the CLI path is the automation path. Both put the build in the same place (App Store Connect, pending processing).
+You can also upload outside the Xcode UI — Apple's **Transporter** app (a standalone macOS app for uploading builds to App Store Connect) and CI-driven flows built on the App Store Connect API are the documented non-Organizer paths. (`xcrun altool`, the older CLI uploader, has been deprecated; do not use it for new automation.) The Xcode Organizer path is the simple dev-loop path; Transporter or an API-based CI flow is the automation path. All of them put the build in the same place (App Store Connect, pending processing).
 
 Processing takes a few minutes; once complete, the build is available for TestFlight and for review submission. If processing fails, the error message usually points at a missing piece (missing icon, a privacy-usage description missing in Info.plist, an entitlement mismatch) — fix and re-upload with a new build number.
 
@@ -89,7 +89,7 @@ Each of these is a durable Apple requirement — verifying them before submissio
 
 ## The takeaway
 
-Build a release archive, sign it with your distribution certificate, upload to App Store Connect from Xcode (or `altool`), complete the metadata (especially privacy policy and nutrition labels), beta-test through TestFlight (internal = no review, external = beta review), then submit for App Review. The build's status moves through well-defined states; rejections come back with specific guideline citations and you fix-and-resubmit with a new build number.
+Build a release archive, sign it with your distribution certificate, upload to App Store Connect from Xcode Organizer (or Transporter / an App Store Connect API CI flow), complete the metadata (especially privacy policy and nutrition labels), beta-test through TestFlight (internal = no review, external = beta review), then submit for App Review. The build's status moves through well-defined states; rejections come back with specific guideline citations and you fix-and-resubmit with a new build number.
 
 ## Sources & References
 

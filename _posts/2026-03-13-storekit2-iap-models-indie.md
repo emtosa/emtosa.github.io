@@ -77,7 +77,7 @@ func purchase(_ product: Product) async throws {
 
 ### 3. Listen for transaction updates and renewals
 
-For subscriptions, the renewal happens out-of-band from your purchase call. You listen on `Transaction.updates` (an async sequence) to catch renewals, expirations, refunds, and family-sharing changes:
+For subscriptions, the renewal happens out-of-band from your purchase call. You listen on `Transaction.updates` (an async sequence) to catch **transaction changes** — renewals, refunds, family-sharing changes, and other transactions the App Store posts to the app. Note that a plain subscription *expiry* does not by itself produce a transaction update; to detect expiration you must check current entitlements (next paragraph), not rely solely on the updates stream.
 
 ```swift
 func listenForTransactions() async {
@@ -90,7 +90,7 @@ func listenForTransactions() async {
 }
 ```
 
-`Transaction.updates` is the runtime hook for subscription lifecycle events. Finishing a transaction (`transaction.finish()`) tells App Store you've processed it; you must finish after granting entitlement or the system will keep prompting. For an auto-renewable subscription app, this listener is where renewals and expirations become UI updates.
+`Transaction.updates` is the runtime hook for transaction changes while the app runs. Finishing a transaction (`transaction.finish()`) tells App Store you've processed it; you must finish after granting entitlement or the system will keep prompting. **Subscription expiration is not delivered via `Transaction.updates`** — to keep entitlement UI current (including expirations and renewals that happened while the app was closed), re-check current entitlements on app launch, on foregrounding, and whenever the subscription surface is shown. The StoreKit 2 API exposes current entitlement checks for this purpose (`<verify>` confirm the exact `Transaction.currentEntitlements` / `Transaction.latest(for:)` symbol names against the Apple Developer docs for your target iOS version).
 
 The exact verification helper (`checkVerified` above is a placeholder name) — StoreKit 2 transactions are JWS-signed; you verify the signature against Apple's root certificate and check the payload. The API surface for the verification step is documented; confirm the exact entry-point symbol against the Apple Developer StoreKit 2 docs for your target iOS version.
 

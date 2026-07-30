@@ -27,16 +27,20 @@ import SwiftUI
 struct TaskRow: View {
     let title: String
     let done: Bool
+    let onToggle: () -> Void          // parent owns the state change
 
     var body: some View {
-        HStack {
-            Image(systemName: done ? "checkmark.circle.fill" : "circle")
-                .accessibilityHidden(true)            // decorative; the row label covers it
-            Text(title)
+        Button(action: onToggle) {                // a real actionable control
+            HStack {
+                Image(systemName: done ? "checkmark.circle.fill" : "circle")
+                    .accessibilityHidden(true)    // decorative; the row label covers it
+                Text(title)
+            }
         }
-        .accessibilityElement(children: .combine)     // collapse the HStack into one element
+        .buttonStyle(.plain)                      // keep the row looking like a row, not a button
+        .accessibilityElement(children: .combine)  // collapse the HStack into one element
         .accessibilityLabel(done ? "Completed: \(title)" : "Task: \(title)")
-        .accessibilityAddTraits(done ? .isButton : [.isButton, .isToggle])
+        .accessibilityAddTraits(done ? [.isButton, .isSelected] : [.isButton, .isToggle])
         .accessibilityHint("Double tap to mark \(done ? "incomplete" : "complete").")
     }
 }
