@@ -1,10 +1,8 @@
 ---
-layout: home
+layout: page
 title: Search
 permalink: /search/
 ---
-
-# Search
 
 <div class="site-search">
   <input id="site-search-input" type="search" placeholder="Search posts…" aria-label="Search posts" autocomplete="off">
