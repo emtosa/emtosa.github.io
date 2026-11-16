@@ -1,46 +1,32 @@
 # emtosa.com
 
-> **This site is redirect-only.** As of 2026-07-29, emtosa.com has been
-> consolidated into **noraze.com**. All pages serve a meta-refresh redirect
-> to the equivalent path on noraze.com with `noindex`. The 34 blog posts
-> were migrated to noraze.com. This repo remains as the redirect host.
+Personal space for projects and notes.
 
-## Content
+This is a small static personal website. It uses local HTML and CSS, with no
+JavaScript, external assets, analytics, forms or account integrations.
 
-emtosa.com was a Jekyll-based GitHub Pages technical-writing blog covering
-AI, productivity, developer tools, and workflows. The content pillars were
-Copilot / agentic AI, Azure / Spark / Kafka data engineering, SwiftUI /
-iOS / App Store product engineering, and deep-work / autonomy systems.
+## Files
 
-## Redirect behavior
+- `index.html`: personal homepage.
+- `404.html`: missing-page response with a link to the homepage.
+- `style.css`: shared responsive styles, including light and dark appearances.
+- `CNAME`: custom domain, `emtosa.com`.
+- `.nojekyll`: serves the static files directly.
 
-Every HTML page contains:
+## Preview
 
-```html
-<meta http-equiv="refresh" content="0; url=https://noraze.com/<equivalent-path>/">
-```
+Run `python3 -m http.server 8000` from the repository, then visit
+`http://localhost:8000`. Visit `/404.html` to preview the missing-page design;
+Python's simple server does not use a custom 404 page automatically.
 
-Plus `<link rel="canonical">` and `noindex` directives pointing to
-noraze.com.
+## Hosting
 
-## Repo structure
+GitHub Pages serves this repository from the root of `main`. The custom domain
+must have a valid TLS certificate before HTTPS can be enforced. Retired routes
+have no redirect files; GitHub Pages serves `404.html` for missing pages.
 
-```
-emtosa.com/
-├── index.html           # Redirect to noraze.com/
-├── _posts/              # 34 Markdown posts (archived, not served)
-├── blog/                # Redirect-only HTML pages
-├── feed/                # Redirect-only RSS
-├── search/              # Redirect-only search
-├── CNAME                # Custom domain: emtosa.com
-├── _config.yml          # Jekyll site config (archived)
-└── README.md            # This file
-```
+## Personal boundary
 
-## Notes
-
-- The Jekyll build artifacts (`_site/`, `.jekyll-cache/`) are gitignored
-  and not deployed. GitHub Pages serves the static redirect HTML directly.
-- The blog posts in `_posts/` are preserved as an archive but are not
-  rendered by Jekyll anymore (the pages in `blog/` are static redirect HTML).
-- Active content lives at **noraze.com** (repo: `foculoom/noraze.com`).
+Keep the website and repository exclusively personal. Use a personal Git identity
+for contributions. Do not introduce business branding, business redirects,
+tracking or account integrations without explicit owner direction.
